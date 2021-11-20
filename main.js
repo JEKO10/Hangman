@@ -1,5 +1,6 @@
 const wordContainer = document.querySelector(".wordContainer");
 const buttonContainer = document.querySelector(".buttonContainer");
+const winner = document.querySelector("#winner");
 const answer = "banana";
 const wordState = [];
 
@@ -41,8 +42,19 @@ const guessLetter = (e) => {
       wordState[i] = currentGuess;
     }
   }
+  if (isWin()) {
+    winner.style.display = "block";
+  }
+};
 
-  console.log(wordState);
+const isWin = () => {
+  let win = false;
+
+  if (!wordState.includes("_")) {
+    win = true;
+  }
+
+  return win;
 };
 
 createKeyboard();
