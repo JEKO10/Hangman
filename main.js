@@ -1,8 +1,11 @@
 const wordContainer = document.querySelector(".wordContainer");
 const buttonContainer = document.querySelector(".buttonContainer");
+const guessesLeft = document.querySelector("#guesses");
 const winner = document.querySelector("#winner");
+const loser = document.querySelector("#loser");
 const answer = "banana";
 const wordState = [];
+let num = 10;
 
 const showWordLength = () => {
   for (let i = 0; i < answer.length; i++) {
@@ -42,8 +45,15 @@ const guessLetter = (e) => {
       wordState[i] = currentGuess;
     }
   }
+  num--;
+  guessesLeft.textContent = num;
+
   if (isWin()) {
+    buttonContainer.style.pointerEvents = "none";
     winner.style.display = "block";
+  } else if (num === 0) {
+    buttonContainer.style.pointerEvents = "none";
+    loser.style.display = "block";
   }
 };
 
