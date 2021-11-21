@@ -8,24 +8,50 @@ let answer;
 let wordState;
 let num;
 
-const premiereLeague = [
-  "Arsenal",
-  "Aston Villa",
-  "Brentford",
-  "Brighton",
-  "Burnley",
-  "Chelsea",
-  "Liverpool",
-  "Everton",
-  "Manchester United",
-  "Tottenham ",
-  "Watford",
-  "West Ham",
+const animals = [
+  "fish",
+  "bird",
+  "bat",
+  "bear",
+  "rabbit",
+  "camel",
+  "cat",
+  "dog",
+  "crab",
+  "cow",
+  "deer",
+  "duck",
 ];
-const movies = ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"];
-const cities = ["manchester", "milan", "madrid", "amsterdam", "prague"];
+const movies = [
+  "alien",
+  "argo",
+  "halloween",
+  "annabelle",
+  "jaws",
+  "wings",
+  "goodfellas",
+  "wolf",
+  "devil",
+  "seven",
+  "planes",
+  "cars",
+];
+const cities = [
+  "manchester",
+  "milan",
+  "madrid",
+  "amsterdam",
+  "prague",
+  "athens ",
+  "berlin",
+  "london",
+  "budapest",
+  "kiev",
+  "lisbon",
+  "moscow",
+];
 
-const categoriesArray = [premiereLeague, movies, cities];
+const categoriesArray = [animals, movies, cities];
 
 const showWordLength = () => {
   for (let i = 0; i < answer.length; i++) {
@@ -92,7 +118,10 @@ reset.addEventListener("click", () => {
 });
 
 const startGame = () => {
-  answer = "banana";
+  answer =
+    categoriesArray[Math.floor(Math.random() * 3)][
+      Math.floor(Math.random() * 12)
+    ];
   wordState = [];
   num = 10;
 
