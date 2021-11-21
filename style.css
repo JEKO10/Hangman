@@ -1,3 +1,62 @@
-.selectedBtn {
-  background-color: gray;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.hangman {
+  text-align: center;
+}
+
+.wordContainer {
+  padding: 30px 0;
+}
+
+.wordContainer button {
+  background-color: #ffb82a;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  margin: 0 5px;
+  padding: 10px 15px;
+}
+
+.buttonContainer button {
+  background-color: #0370fb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  margin: 5px;
+  padding: 10px 15px;
+}
+
+.number {
+  font-size: 1.5rem;
+}
+
+#winner {
+  font-size: 1.5rem;
+  color: #008000;
+}
+
+#loser {
+  font-size: 1.5rem;
+  color: #ff0000;
+}
+
+#reset {
+  font-size: 2rem;
+  background-color: #0370fb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 2rem;
+}
+
+/* .selectedBtn {
+  background-color: gray;
+} */
