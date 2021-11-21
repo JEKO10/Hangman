@@ -132,8 +132,6 @@ const startGame = () => {
     category.innerHTML = "Cities";
   }
 
-  console.log(answer);
-
   guessesLeft.textContent = num;
   wordContainer.innerHTML = "";
   buttonContainer.innerHTML = "";
