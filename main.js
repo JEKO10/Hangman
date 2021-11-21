@@ -1,5 +1,6 @@
 const wordContainer = document.querySelector(".wordContainer");
 const buttonContainer = document.querySelector(".buttonContainer");
+const category = document.querySelector("#category");
 const guessesLeft = document.querySelector("#guesses");
 const winner = document.querySelector("#winner");
 const loser = document.querySelector("#loser");
@@ -42,7 +43,7 @@ const cities = [
   "madrid",
   "amsterdam",
   "prague",
-  "athens ",
+  "athens",
   "berlin",
   "london",
   "budapest",
@@ -118,12 +119,20 @@ reset.addEventListener("click", () => {
 });
 
 const startGame = () => {
-  answer =
-    categoriesArray[Math.floor(Math.random() * 3)][
-      Math.floor(Math.random() * 12)
-    ];
+  let random = Math.floor(Math.random() * 3);
+  answer = categoriesArray[random][Math.floor(Math.random() * 12)];
   wordState = [];
   num = 10;
+
+  if (random === 0) {
+    category.innerHTML = "Animals";
+  } else if (random === 1) {
+    category.innerHTML = "Movies";
+  } else {
+    category.innerHTML = "Cities";
+  }
+
+  console.log(answer);
 
   guessesLeft.textContent = num;
   wordContainer.innerHTML = "";
