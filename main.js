@@ -8,10 +8,28 @@ let answer;
 let wordState;
 let num;
 
+const premiereLeague = [
+  "Arsenal",
+  "Aston Villa",
+  "Brentford",
+  "Brighton",
+  "Burnley",
+  "Chelsea",
+  "Liverpool",
+  "Everton",
+  "Manchester United",
+  "Tottenham ",
+  "Watford",
+  "West Ham",
+];
+const movies = ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"];
+const cities = ["manchester", "milan", "madrid", "amsterdam", "prague"];
+
+const categoriesArray = [premiereLeague, movies, cities];
+
 const showWordLength = () => {
   for (let i = 0; i < answer.length; i++) {
     const button = document.createElement("button");
-    // button.setAttribute("class", "hiddenColor");
     button.textContent = "_";
     wordContainer.append(button);
     wordState.push("_");
@@ -24,7 +42,6 @@ const createKeyboard = () => {
 
   for (let i = start.charCodeAt(); i <= end.charCodeAt(); i++) {
     const alphabet = document.createElement("button");
-    // alphabet.setAttribute("class", "letterColor");
     alphabet.textContent = String.fromCharCode(i);
     alphabet.addEventListener("click", guessLetter);
     alphabet.addEventListener("click", () => {
@@ -35,7 +52,7 @@ const createKeyboard = () => {
 };
 
 const guessLetter = (e) => {
-  // e.target.setAttribute("class", "grayColor");
+  e.target.setAttribute("id", "selectedBtn");
   const wordButtons = document.querySelectorAll(".wordContainer button");
   const currentGuess = e.target.textContent;
 
